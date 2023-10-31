@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        GIT_REPO_URL = 'https://github.com/gopal-py07/CI-CD-Python-Django-Poll-App-Docker-Kubernet-minikube-.git'
+        GIT_REPO_URL = 'https://github.com/gopal-py07/grafana-dashboard-deployment-poll-app.git'
         WORKSPACE_PATH = "${env.WORKSPACE}"
         DOCKER_COMPOSE_FILE = "${WORKSPACE_PATH}/docker-compose.yml"
         MINIKUBE_PATH = '/usr/local/bin/minikube'
