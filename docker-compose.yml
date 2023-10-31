@@ -2,7 +2,7 @@ version: '3.8'
 services:
    web:
        build: .
-       container_name: lnx_poll_prj_Jenkins_dash
+       container_name: lnx_poll_prj_dashboard
        image: gopalghule05/lnx_poll_prj_jenkins_dashboard:1.0
        command: python3 manage.py runserver 0.0.0.0:8000
        ports:
