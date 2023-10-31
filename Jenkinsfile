@@ -8,6 +8,7 @@ pipeline {
         MINIKUBE_PATH = '/usr/local/bin/minikube'
         KUBECTL_PATH = '/usr/local/bin/kubectl'
         DEPLOYMENT_YML_PATH = 'deployment.yml'
+        SERVICE_YML_PATH = 'service.yml'
         SERVICE_NAME = 'django-backend-poll-app-jenkins-service'
     }
 
@@ -81,7 +82,9 @@ pipeline {
                         currentBuild.result = 'SUCCESS' // Mark the build as success
                     } else {
                         echo "Service ${SERVICE_NAME} does not exist. Proceeding to the 'Expose Port' stage."
-                        sh "${KUBECTL_PATH} expose deployment ${SERVICE_NAME} --type=LoadBalancer --port=8000"
+                        //sh "${KUBECTL_PATH} expose deployment ${SERVICE_NAME} --type=LoadBalancer --port=8000"
+                        sh "${KUBECTL_PATH} apply -f ${SERVICE_YML_PATH}"
+
                     }
                 }
             }
