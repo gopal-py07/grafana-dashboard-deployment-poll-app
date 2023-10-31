@@ -23,6 +23,6 @@ urlpatterns = [
     path('polls/', include('poll.urls')),
     path('users/', include('Users.urls')),
     path('admin/', admin.site.urls),
-    url('', include('django_prometheus.urls')),
+    path('', include('django_prometheus.urls')),
     
 ]
